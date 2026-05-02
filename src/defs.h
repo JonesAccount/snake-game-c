@@ -1,11 +1,13 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-#define MAP_Y 12
-#define MAP_X 21
-#define MAP_SIZE (MAP_Y * MAP_X)
+#define HEIGHT 20
+#define WIDTH  40
+#define MAX_LEN (HEIGHT * WIDTH)
 
-#define SNAKE_Y 5
-#define SNAKE_X 10
+#define UP    1
+#define DOWN  2
+#define LEFT  3
+#define RIGHT 4
 
 #endif

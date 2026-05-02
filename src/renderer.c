@@ -1,38 +1,35 @@
-#include <stddef.h>
+#include <string.h>
 #include <stdio.h>
 
 #include "renderer.h"
+#include "utils.h"
 #include "defs.h"
 
-char map[MAP_Y * MAP_X];
-
-void fill_map(void) {
-    for (size_t i = 0; i < MAP_Y; i++) {
-        for (size_t j = 0; j < MAP_X; j++) {
-            if (i == 0 || i == MAP_Y - 1 || j == 0 || j == MAP_X - 1) {
-                map[i * MAP_X + j] = '#';
-            } else {
-                map[i * MAP_X + j] = ' ';
-            }
-        }
-    }
-}
-
-void render_map(void) {
-    for (size_t i = 0; i < MAP_SIZE; i++) {
-        printf("%c", map[i]);
-        if ((i + 1) % MAP_X == 0) { printf("\n"); }
-    }
-}
-
-void render_snake(void) {
-	map[snake[0] -> y * MAP_X + snake[0] -> x] = '@';
-}
-
-void render_food(void) {
+void draw(const Snake *s, const Food *food, int score) {
+	char field[HEIGHT][WIDTH];
+	memset(field, ' ', sizeof(field));
 	
-}
-
-void render_score(void) {
+	for (int i = 0; i < s -> len; i++) {
+		field[s -> body[i].y][s -> body[i].x] = (i == 0) ? '@' : 'o';
+	} 
 	
+	field[food -> pos.y][food -> pos.x] = '*';
+	
+	move_cursor(0, 0);
+	printf("+");
+	for (int x = 0; x < WIDTH; x++) { printf("--"); }
+	printf("+\n");
+	
+	for (int y = 0; y < HEIGHT; y++) {
+		printf("|");
+		for (int x = 0; x < WIDTH; x++) { printf("%c ", field[y][x]); }
+		printf("|\n");
+	}
+	
+	printf("+");
+	for (int x = 0; x < WIDTH; x++) { printf("--"); }
+	printf("+\n");
+	printf("  Score: %d   (WASD / arrows = move, q = quit)\n", score);
+	
+	fflush(stdout);
 }
