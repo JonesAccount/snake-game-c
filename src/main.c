@@ -12,44 +12,52 @@
 
 int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));
-	term_raw();
-	cursor_hide();
-	clear_screen();
-
+	
+	short running_menu = 1;
+	short running_game = 1;
+	
 	Snake snake;
 	Food  food;
-	snake_init(&snake);
-	spawn_food(&food, &snake);
+	
+	while (running_menu) {
+		// - - - - - - - - - - - - - - - - - 
+		term_raw();
+		cursor_hide();
+		clear_screen();
 
-	int score = 0;
-	int running = 1;
+		snake_init(&snake);
+		spawn_food(&food, &snake);
 
-	while (running) {
-        int key = read_key();
-        if (key == 'q') { break; }
+		int score = 0;
+		// - - - - - - - - - - - - - - - - - 
+		while (running_game) {
+        	int key = read_key();
+         	if (key == 'q') { break; }
 
-        if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
-        if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
-        if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
-        if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
+          	if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
+           	if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
+            if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
+           	if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
 
-        int result = snake_move(&snake, &food);
+            int result = snake_move(&snake, &food);
 
-        if (result == -1) {
-        	running = 0;
-        } else if (result == 1) {
-        	snake.len++;
-         	score += 10;
-          	spawn_food(&food, &snake);
-        }
+            if (result == -1) {
+           		running_game = 0;
+            } else if (result == 1) {
+           		snake.len++;
+            	score += 10;
+            	spawn_food(&food, &snake);
+            }
 
-        draw(&snake, &food, score);
-        usleep(120000);
-    }
+            draw(&snake, &food, score);
+            usleep(200000); // 120000
+    	}
+		running_menu = 0;
+	}
 
 	clear_screen();
 	cursor_show();
 	term_restore();
-	printf("Game over! Final score: %d\n", score);
+	printf("Game over!");
 	return 0;
 }

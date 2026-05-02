@@ -16,19 +16,26 @@ void draw(const Snake *s, const Food *food, int score) {
 	field[food -> pos.y][food -> pos.x] = '*';
 	
 	move_cursor(0, 0);
-	printf("+");
-	for (int x = 0; x < WIDTH; x++) { printf("--"); }
-	printf("+\n");
+	
+	printf(BOLD); // all symbols bold
+	
+	for (int x = 0; x < (WIDTH + 1) * 2; x++) { printf(WHITE_TEXT_WHITE_BACKGROUND "#" RESET); }
+	printf("\n");
 	
 	for (int y = 0; y < HEIGHT; y++) {
-		printf("|");
-		for (int x = 0; x < WIDTH; x++) { printf("%c ", field[y][x]); }
-		printf("|\n");
+		printf("#");
+		for (int x = 0; x < WIDTH; x++) {
+			if (field[y][x] == '*') {
+				printf(YELLOW "%c " RESET, field[y][x]);
+			} else {
+				printf("%c ", field[y][x]);
+			}
+		}
+		printf("#\n");
 	}
 	
-	printf("+");
-	for (int x = 0; x < WIDTH; x++) { printf("--"); }
-	printf("+\n");
+	for (int x = 0; x < (WIDTH + 1) * 2; x++) { printf("#"); }
+	printf("\n");
 	printf("  Score: %d   (WASD / arrows = move, q = quit)\n", score);
 	
 	fflush(stdout);

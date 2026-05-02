@@ -27,10 +27,12 @@ int snake_move(Snake *s, const Food *food) {
 		head -> y < 0 || head -> y >= HEIGHT) { return -1; }
 	
 	for (int i = 1; i < s -> len; i++) {
-		if (s -> body[i].x == head -> x && s -> body[i].y == head -> y) { return -1; }
+		if (s -> body[i].x == head -> x &&
+			s -> body[i].y == head -> y) { return -1; }
 	}
 	
-	if (head -> x == food -> pos.x && head -> y == food -> pos.y) {
+	if (head -> x == food -> pos.x &&
+		head -> y == food -> pos.y) {
 		s -> body[s -> len] = s -> body[s -> len - 1];
 		return 1;
 	}
