@@ -1,9 +1,9 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "renderer.h"
-#include "utils.h"
-#include "defs.h"
+#include "../include/renderer.h"
+#include "../include/utils.h"
+#include "../include/defs.h"
 
 void draw(const Snake *s, const Food *food, int score) {
 	char field[HEIGHT][WIDTH];
@@ -19,7 +19,7 @@ void draw(const Snake *s, const Food *food, int score) {
 	
 	printf(BOLD); // all symbols bold
 	
-	for (int x = 0; x < (WIDTH + 1) * 2; x++) { printf(WHITE_TEXT_WHITE_BACKGROUND "#" RESET); }
+	for (int x = 0; x < (WIDTH + 1) * 2; x++) { printf("#"); }
 	printf("\n");
 	
 	for (int y = 0; y < HEIGHT; y++) {

@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-#include "types.h"
-#include "defs.h"
-#include "game.h"
+#include "../include/types.h"
+#include "../include/defs.h"
+#include "../include/game.h"
 
 void snake_init(Snake *s) {
 	s -> len = 3;

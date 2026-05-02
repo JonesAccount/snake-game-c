@@ -3,24 +3,26 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "renderer.h"
-#include "utils.h"
-#include "types.h"
-#include "input.h"
-#include "game.h"
-#include "defs.h"
+#include "../include/renderer.h"
+#include "../include/utils.h"
+#include "../include/types.h"
+#include "../include/input.h"
+#include "../include/game.h"
+#include "../include/defs.h"
+#include "../include/menu.h"
 
 int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));
-	
+
 	short running_menu = 1;
 	short running_game = 1;
-	
+
 	Snake snake;
 	Food  food;
-	
+
 	while (running_menu) {
-		// - - - - - - - - - - - - - - - - - 
+		running_menu = render_menu();
+			
 		term_raw();
 		cursor_hide();
 		clear_screen();
@@ -29,7 +31,7 @@ int main(int argc, char *argv[]) {
 		spawn_food(&food, &snake);
 
 		int score = 0;
-		// - - - - - - - - - - - - - - - - - 
+		// - - - - - - - - - - - - - - - - -
 		while (running_game) {
         	int key = read_key();
          	if (key == 'q') { break; }
@@ -50,7 +52,7 @@ int main(int argc, char *argv[]) {
             }
 
             draw(&snake, &food, score);
-            usleep(200000); // 120000
+            usleep(500); // 120000
     	}
 		running_menu = 0;
 	}

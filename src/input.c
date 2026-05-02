@@ -1,7 +1,7 @@
 #include <unistd.h>
 
-#include "input.h"
-#include "defs.h"
+#include "../include/input.h"
+#include "../include/defs.h"
 
 int read_key(void) {
 	char buf[4] = {0};
