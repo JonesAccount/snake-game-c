@@ -17,6 +17,7 @@ const char *title[] = {
 	" | |______________________________________________________/ /       ",
 	" \\_________________________________________________________/       "
 	};
+
 char *options[] = {" PLAY", "RECORD", "OPTION", " EXIT"};
 
 typedef struct { unsigned int x:2; } St;
@@ -32,6 +33,8 @@ int input_menu(void) {
 		case 13:
 			switch (st.x) {
 				case 0: return 1;
+				case 1: break;
+				case 2: break;
 				case 3: 
 					cursor_show();
 					term_restore();
