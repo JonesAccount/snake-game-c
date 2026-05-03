@@ -17,7 +17,7 @@ void draw(const Snake *s, const Food *food, int score) {
 	
 	move_cursor(0, 0);
 	
-	printf(BOLD); // all symbols bold
+	printf(BOLD); 
 	
 	for (int x = 0; x < (WIDTH + 1) * 2; x++) { printf("#"); }
 	printf("\n");
