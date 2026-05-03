@@ -15,51 +15,55 @@ int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));
 
 	short running_menu = 1;
-	short running_game = 1;
+	short running_game = 0;
 
 	Snake snake;
 	Food  food;
+	
+	int score = 0;
 
 	while (running_menu) {
-		running_menu = render_menu();
-			
-		term_raw();
-		cursor_hide();
 		clear_screen();
-
-		snake_init(&snake);
-		spawn_food(&food, &snake);
-
-		int score = 0;
-		// - - - - - - - - - - - - - - - - -
-		while (running_game) {
-        	int key = read_key();
-         	if (key == 'q') { break; }
-
-          	if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
-           	if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
-            if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
-           	if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
-
-            int result = snake_move(&snake, &food);
-
-            if (result == -1) {
-           		running_game = 0;
-            } else if (result == 1) {
-           		snake.len++;
-            	score += 10;
-            	spawn_food(&food, &snake);
-            }
-
-            draw(&snake, &food, score);
-            usleep(500); // 120000
-    	}
-		running_menu = 0;
+		term_restore();
+		cursor_show();
+		
+		print_menu_title();
+		print_menu_text();
+		running_game = input_menu();
+		clear_screen();
+		
+		if (running_game) {
+			term_raw();
+			cursor_hide();
+			
+			snake_init(&snake);
+			spawn_food(&food, &snake);
+			score = 0;
+		
+			while (running_game) {
+	        	int key = read_key();
+	         	if (key == 'q') { break; }
+	
+	          	if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
+	           	if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
+	            if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
+	           	if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
+	
+	            int result = snake_move(&snake, &food);
+	
+	            if (result == -1) {
+	           		running_game = 0;
+	            } else if (result == 1) {
+	           		snake.len++;
+	            	score += 10;
+					spawn_food(&food, &snake);
+	            }
+	
+	            draw(&snake, &food, score);
+	            usleep(120000); 
+	    	}
+		}
 	}
-
-	clear_screen();
-	cursor_show();
-	term_restore();
-	printf("Game over!");
+	
 	return 0;
 }

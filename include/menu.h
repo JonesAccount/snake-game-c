@@ -1,7 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
-void print_title(void);
-int render_menu(void);
+void print_menu_title(void);
+void print_menu_text(void);
+int input_menu(void);
 
 #endif
