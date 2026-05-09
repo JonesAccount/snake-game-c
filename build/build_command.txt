@@ -1,1 +1,0 @@
-gcc src/*.c -I include/ -o build/game && ./build/game

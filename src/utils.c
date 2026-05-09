@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#include "../include/utils.h"
+#include "../includes/utils.h"
 
 struct termios orig_term;
 

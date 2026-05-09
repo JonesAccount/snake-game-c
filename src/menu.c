@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "../include/utils.h"
-#include "../include/defs.h"
+#include "../includes/utils.h"
+#include "../includes/defs.h"
 
 const char *title[] = {
 	"                                      88                            ",

@@ -1,9 +1,9 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "../include/renderer.h"
-#include "../include/utils.h"
-#include "../include/defs.h"
+#include "../includes/renderer.h"
+#include "../includes/utils.h"
+#include "../includes/defs.h"
 
 void draw(const Snake *s, const Food *food, int score) {
 	char field[HEIGHT][WIDTH];

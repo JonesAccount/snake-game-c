@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "../include/renderer.h"
-#include "../include/utils.h"
-#include "../include/types.h"
-#include "../include/input.h"
-#include "../include/game.h"
-#include "../include/defs.h"
-#include "../include/menu.h"
+#include "../includes/renderer.h"
+#include "../includes/utils.h"
+#include "../includes/types.h"
+#include "../includes/input.h"
+#include "../includes/game.h"
+#include "../includes/defs.h"
+#include "../includes/menu.h"
 
 int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));
