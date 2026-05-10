@@ -13,56 +13,87 @@
 
 int main(int argc, char *argv[]) {
 	srand((unsigned)time(NULL));
+    atexit(term_restore);
+    fflush(stdout);
+    cursor_hide();
 
-	short running_menu = 1;
-	short running_game = 0;
+    short running_menu = 1;
+    short running_game = 0;
 
-	Snake snake;
-	Food  food;
+    Snake snake;
+    Food  food;
 
-	int score = 0;
+    while (running_menu) {
+    	int score = 0;
+     	int lifes = 3;
 
-	while (running_menu) {
-		term_restore();
-		cursor_show();
+        print_menu_title();
+        print_menu_text();
+        running_game = input_menu();
+        clear_screen();
 
-		print_menu_title();
-		print_menu_text();
-		running_game = input_menu();
-		clear_screen();
+        if (running_game) {
+            term_raw();
 
-		if (running_game) {
-			term_raw();
-			cursor_hide();
+            snake_init(&snake);
+            spawn_food(&food, &snake);
+            score = 0;
 
-			snake_init(&snake);
-			spawn_food(&food, &snake);
-			score = 0;
+            while (lifes > 0) {
+                int key = read_key();
 
-			while (running_game) {
-	        	int key = read_key();
-	         	if (key == 'q') { break; }
+                if (key == 'q') { break; }
 
-	          	if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
-	           	if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
-	            if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
-	           	if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
+                if (key == KEY_SPACE) {
+                    toggle_pause();
+                    key = 0;
+                }
 
-	            int result = snake_move(&snake, &food);
+                if (!is_paused()) {
+                    if (key == UP    && snake.dir != DOWN ) { snake.dir = UP;    }
+                    if (key == DOWN  && snake.dir != UP   ) { snake.dir = DOWN;  }
+                    if (key == LEFT  && snake.dir != RIGHT) { snake.dir = LEFT;  }
+                    if (key == RIGHT && snake.dir != LEFT ) { snake.dir = RIGHT; }
 
-	            if (result == -1) {
-	           		running_game = 0;
-	            } else if (result == 1) {
-	           		snake.len++;
-	            	score += 10;
-					spawn_food(&food, &snake);
-	            }
+                    int result = snake_move(&snake, &food);
 
-	            draw(&snake, &food, score);
-	            usleep(120000);
-	    	}
-		}
-	}
+                    if (result == -1) {
+                        lifes--;
+                        if (lifes > 0) {
+                        	draw(&snake, &food, score, lifes, 1);
+                          	snake_init(&snake);
+                           	sleep(2);
+                        }
+                    } else if (result == 1) {
+                        snake.len++;
+                        score += 10;
+                        spawn_food(&food, &snake);
+                    }
+                }
 
-	return 0;
+                clear_screen();
+
+                if (is_paused()) {
+                	draw(&snake, &food, score, lifes, 1);
+                    draw_pause();
+                    fflush(stdout);
+                    usleep(50000);
+                } else {
+                	draw(&snake, &food, score, lifes, 0);
+                    usleep(1200);
+                }
+
+                usleep(120000);
+            }
+
+            clear_screen();
+            printf("game over");
+            sleep(2);
+            clear_screen();
+            running_game = 0;
+            term_restore();
+        }
+    }
+
+    return 0;
 }
