@@ -210,6 +210,15 @@ game_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 game_SOURCE_DIR:STATIC=/Users/jons/Documents/GitHub/snake-game-c
 
+//Value Computed by CMake
+snake_BINARY_DIR:STATIC=/Users/jons/Documents/GitHub/snake-game-c/build
+
+//Value Computed by CMake
+snake_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+snake_SOURCE_DIR:STATIC=/Users/jons/Documents/GitHub/snake-game-c
+
 
 ########################
 # INTERNAL cache entries

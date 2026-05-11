@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/snake.dir/src/renderer.c.o CMakeFiles/snake.dir/src/input.c.o CMakeFiles/snake.dir/src/utils.c.o CMakeFiles/snake.dir/src/main.c.o CMakeFiles/snake.dir/src/game.c.o CMakeFiles/snake.dir/src/menu.c.o CMakeFiles/snake.dir/src/died.c.o -o snake

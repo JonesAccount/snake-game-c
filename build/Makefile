@@ -129,6 +129,30 @@ game/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/died.o: src/died.c.o
+.PHONY : src/died.o
+
+# target to build an object file
+src/died.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/died.c.o
+.PHONY : src/died.c.o
+
+src/died.i: src/died.c.i
+.PHONY : src/died.i
+
+# target to preprocess a source file
+src/died.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/died.c.i
+.PHONY : src/died.c.i
+
+src/died.s: src/died.c.s
+.PHONY : src/died.s
+
+# target to generate assembly for a file
+src/died.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/died.c.s
+.PHONY : src/died.c.s
+
 src/game.o: src/game.c.o
 .PHONY : src/game.o
 
@@ -282,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... game"
+	@echo "... src/died.o"
+	@echo "... src/died.i"
+	@echo "... src/died.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"

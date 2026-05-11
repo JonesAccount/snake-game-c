@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/jons/Documents/GitHub/snake-game-c/src/died.c" "CMakeFiles/game.dir/src/died.c.o" "gcc" "CMakeFiles/game.dir/src/died.c.o.d"
   "/Users/jons/Documents/GitHub/snake-game-c/src/game.c" "CMakeFiles/game.dir/src/game.c.o" "gcc" "CMakeFiles/game.dir/src/game.c.o.d"
   "/Users/jons/Documents/GitHub/snake-game-c/src/input.c" "CMakeFiles/game.dir/src/input.c.o" "gcc" "CMakeFiles/game.dir/src/input.c.o.d"
   "/Users/jons/Documents/GitHub/snake-game-c/src/main.c" "CMakeFiles/game.dir/src/main.c.o" "gcc" "CMakeFiles/game.dir/src/main.c.o.d"
