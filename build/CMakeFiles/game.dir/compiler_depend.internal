@@ -91,6 +91,7 @@ CMakeFiles/game.dir/src/died.c.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/ptrcheck.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h
  /Users/jons/Documents/GitHub/snake-game-c/includes/defs.h
  /Users/jons/Documents/GitHub/snake-game-c/includes/utils.h

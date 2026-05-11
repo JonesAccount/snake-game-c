@@ -90,6 +90,7 @@ CMakeFiles/game.dir/src/died.c.o: /Users/jons/Documents/GitHub/snake-game-c/src/
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/ptrcheck.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/jons/Documents/GitHub/snake-game-c/includes/defs.h \
   /Users/jons/Documents/GitHub/snake-game-c/includes/utils.h
@@ -638,9 +639,13 @@ CMakeFiles/game.dir/src/utils.c.o: /Users/jons/Documents/GitHub/snake-game-c/src
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/gethostuuid.h:
+
 /Users/jons/Documents/GitHub/snake-game-c/includes/types.h:
 
 /Users/jons/Documents/GitHub/snake-game-c/includes/utils.h:
+
+/Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/endian.h:
 
@@ -825,8 +830,6 @@ CMakeFiles/game.dir/src/utils.c.o: /Users/jons/Documents/GitHub/snake-game-c/src
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/gethostuuid.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h:
 
