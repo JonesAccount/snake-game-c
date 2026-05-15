@@ -24,14 +24,15 @@ make && run
 
 ## Project Structure
 ```
-assets/
-build/
+assets
     ...
-includes/
+build
     ...
-saves/
+includes
     ...
-src/
+saves
+    ...
+src
     ...
 .gitignore
 CMakeLists.txt
