@@ -25,15 +25,10 @@ make && run
 ## Project Structure
 ```
 assets
-    ...
-build
-    ...
-includes
-    ...
-saves
-    ...
-src
-    ...
+build/
+includes/
+saves/
+src/
 .gitignore
 CMakeLists.txt
 README.md
