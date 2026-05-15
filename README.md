@@ -1,6 +1,6 @@
 # Snake game CLI
 
-![Demo](assets/demo.gif)
+![Demo](assets/Demo.gif)
 
 > A classic snake game running in the terminal, written in C.
 
