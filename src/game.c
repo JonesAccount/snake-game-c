@@ -46,10 +46,9 @@ int snake_move(Snake *s, const Food *food) {
 }
 
 void draw_pause(void) {
-    printf("\033[%d;%dH", HEIGHT/2, WIDTH/2 + 18);
-    printf(BOLD "PAUSED");
-    printf("\033[%d;%dH", HEIGHT/2 + 1, WIDTH/2 + 10);
-    printf("Press SPACE to continue" RESET);
+    printf(BOLD "\033[%d;%dHPAUSED" RESET, HEIGHT/2, WIDTH/2 + 18);
+    printf(BOLD "\033[%d;%dHPress SPACE to continue" RESET, HEIGHT/2 + 1, WIDTH/2 + 10);
+    printf("\033[%d;%dHQ - quit" RESET, HEIGHT/2 + 6, WIDTH/2 + 17);
 }
 
 void spawn_food(Food *food, const Snake *snake) {

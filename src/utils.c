@@ -39,7 +39,14 @@ void clear_buff(void) {
 	while ((c = getchar()) != '\n' && c != EOF);
 }
 
-void clear_screen(void) { fputs("\033[2J\033[H", stdout); fflush(stdout); }
-void move_cursor(int x, int y) { printf("\033[%d;%dH", y + 1, x * 2 + 1); }
+void clear_screen(void) {
+	fputs("\033[2J\033[H", stdout);
+	fflush(stdout);
+}
+
+void move_cursor(int x, int y) {
+	printf("\033[%d;%dH", y + 1, x * 2 + 1);
+}
+
 void cursor_hide(void) { printf("\033[?25l"); }
 void cursor_show(void) { printf("\033[?25h"); }

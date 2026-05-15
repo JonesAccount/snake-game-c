@@ -1,0 +1,7 @@
+when snake dead:
+1. stop walking 
+2. mines life
+3. animation snake
+4. start walking
+
+main:
