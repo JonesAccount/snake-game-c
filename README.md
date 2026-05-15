@@ -1,3 +1,5 @@
+I didn't finish this project. Maybe later
+
 # Snake game CLI
 
 ![Demo](assets/Demo.gif)
