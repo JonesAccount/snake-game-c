@@ -5,8 +5,6 @@ No engines, no frameworks — just low-level control and raw terminal rendering.
 
 ---
 
-## 🎮 Demo
-
 ![Demo](assets/Demo.gif)
 
 ---
