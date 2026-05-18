@@ -5,7 +5,7 @@ No engines, no frameworks — just low-level control and raw terminal rendering.
 
 ---
 
-![Demo](assets/Demo.gif)
+![Demo](assets/gif.gif)
 
 ---
 
