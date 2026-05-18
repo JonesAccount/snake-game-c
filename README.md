@@ -36,13 +36,14 @@ No engines, no frameworks — just low-level control and raw terminal rendering.
 
 ## ⚙️ Build & Run
 
-`bash
+```bash
 git clone https://github.com/JonesAccount/snake-game-c.git
 cd snake-game-c/build
 
 cmake ..
 make
 ./snake
+```
 
 ## 🗂️ Project Structure
 
