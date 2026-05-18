@@ -1,37 +1,47 @@
-I didn't finish this project. Maybe later
+# 🐍 Snake Game (C / Terminal)
 
-# Snake game CLI
+A classic Snake game written in pure C for the terminal.  
+No engines, no frameworks — just low-level control and raw terminal rendering.
+
+---
+
+## 🎮 Demo
 
 ![Demo](assets/Demo.gif)
 
-> A classic snake game running in the terminal, written in C.
+---
 
-## Features
-- Simple controls
-- Increasing speed (optional)
-- Score system
-- Classic retro style
+## ✨ Features
 
-## How to play
-1. Use arrow keys or WASD to move the snake
-2. Eat food to grow longer
-3. Do not hit the wall
-4. Do not hit your own tail
+- 🎮 Smooth terminal gameplay
+- ❤️ 3 lives system (respawn after collision)
+- ⏸️ Pause / Resume (Space)
+- 🏆 Score tracking
+- 📺 Retro ASCII-style graphics
+- 💀 Game over screen with restart option
+- 🎯 Main menu with title screen
 
-## Build & Run
-```bash
-cd build
-make && run
-```q
+---
 
-## Project Structure
-```
-assets
-build/
-includes/
-saves/
-src/
-.gitignore
-CMakeLists.txt
-README.md
-```
+## 🎮 Controls
+
+| Key        | Action        |
+|------------|--------------|
+| W / ↑    | Move up       |
+| S / ↓    | Move down     |
+| A / ←    | Move left     |
+| D / →    | Move right    |
+| Space    | Pause / Resume|
+| Q        | Quit game     |
+
+---
+
+## ⚙️ Build & Run
+
+`bash
+git clone https://github.com/JonesAccount/snake-game-c.git
+cd snake-game-c/build
+
+cmake ..
+make
+./snake
