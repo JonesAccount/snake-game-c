@@ -45,3 +45,14 @@ cd snake-game-c/build
 cmake ..
 make
 ./snake
+
+## 🗂️ Project Structure
+
+```
+snake-game-c/
+├── src/          # Source code (.c files)
+├── includes/     # Header files (.h)
+├── assets/       # Images and demo GIF
+├── saves/        # Save data / high score
+└── CMakeLists.txt
+```
